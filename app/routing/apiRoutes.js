@@ -3,10 +3,11 @@ const server = require('../../server')
 module.exports = {
     routes: () => {
         server.li().get("/api/friends", (req, res) => {
-            console.log("GET API Friends")
+        res.send(`<p><a href="/">Return Home</a> | <a href="/survey">Submit Survey</a></p><pre>${JSON.stringify(server.friend(), null, 2)}</pre>`);
+            console.log("API GET FRIEND")
         });
         server.li().post("/api/friends", (req, res) => {
-            console.log("POST API Friends")
-        });
+            console.log("API POST FRIEND")
+        })
     }
 }
